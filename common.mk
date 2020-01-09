@@ -27,7 +27,7 @@ display_config_version := $(shell \
 endif
 ifeq ($(display_config_version),)
 display_config_version := $(shell \
-    if [ -d "$(QC_OPEN_PATH)/interfaces/display/config/1.3" ];\
+    if [ -d "$(TOP)/vendor/qcom/opensource/interfaces/display/config/1.3" ];\
     then echo DISPLAY_CONFIG_1_3; fi)
 endif
 ifeq ($(display_config_version),)
