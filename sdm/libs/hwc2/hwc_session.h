@@ -430,6 +430,7 @@ class HWCSession : hwc2_device_t, HWCUEventListener, IDisplayConfig, public qCli
   std::bitset<HWCCallbacks::kNumDisplays> pending_refresh_;
   bool async_powermode_ = false;
   bool power_state_transition_[HWCCallbacks::kNumDisplays] = {};  // +1 to account for primary.
+  bool override_doze_mode_ = false;
   std::bitset<HWCCallbacks::kNumDisplays> display_ready_;
 };
 

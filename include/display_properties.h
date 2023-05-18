@@ -122,6 +122,7 @@
 #define ENABLE_QDCM_DIAG                     DISPLAY_PROP("enable_qdcm_diag")
 #define QDCM_DISABLE_FACTORY_MODE_PROP       DISPLAY_PROP("qdcm.disable_factory_mode")
 #define DISABLE_DEFER_POWER_STATE            DISPLAY_PROP("disable_defer_power_state")
+#define OVERRIDE_DOZE_MODE_PROP              DISPLAY_PROP("override_doze_mode")
 
 #define ZERO_SWAP_INTERVAL                   "vendor.debug.egl.swapinterval"
 #define DEFER_FPS_FRAME_COUNT                DISPLAY_PROP("defer_fps_frame_count")

@@ -218,6 +218,11 @@ int HWCSession::Init() {
   async_powermode_ = (value == 1);
   DLOGI("builtin_powermode_override: %d", async_powermode_);
 
+  value = 0;
+  Debug::Get()->GetProperty(OVERRIDE_DOZE_MODE_PROP, &value);
+  override_doze_mode_ = (value == 1);
+  DLOGI("override_doze_mode: %d", override_doze_mode_);
+
   InitSupportedDisplaySlots();
   // Create primary display here. Remaining builtin displays will be created after client has set
   // display indexes which may happen sometime before callback is registered.
@@ -1276,7 +1281,7 @@ int32_t HWCSession::GetDozeSupport(hwc2_device_t *device, hwc2_display_t display
 
   *out_support = 0;
   if (hwc_display->GetDisplayClass() == DISPLAY_CLASS_BUILTIN) {
-    *out_support = 1;
+    *out_support = (override_doze_mode_);
   }
 
   return HWC2_ERROR_NONE;
